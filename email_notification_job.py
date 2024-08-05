@@ -74,6 +74,10 @@ else:
     if delta and delta.count() > 0:
         delta.write.mode("append").save(table_path)
 
+        files_list =  [ x["path"] for x in delta.collect()]
+
+        # email this out to the team.
+
 # COMMAND ----------
 
 # MAGIC %sql select * from bronze_alwayson.cc_landing_upload_audit
